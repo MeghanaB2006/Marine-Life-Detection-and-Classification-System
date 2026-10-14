@@ -48,8 +48,6 @@ The trained EfficientNet-based classification model analyses detected fish regio
 
 **Purpose:** Classify detected fish into the species represented in the trained model.
 
-*Note: Use the exact EfficientNet variant loaded by your code. Your earlier training notebook used EfficientNetB0.*
-
 ### 4.4 Rule-Based Feedback Controller
 
 The feedback controller connects detection evaluation with subsequent processing. It checks the quality of the detection results and determines whether they can proceed to classification or require another processing attempt.
@@ -76,7 +74,6 @@ Grad-CAM can generate visual explanations that highlight image regions influenci
 
 **Purpose:** Help interpret classification decisions and visualize relevant image features.
 
-This feature should be documented as part of the active pipeline only if it is implemented and available in the current version.
 
 ## 5. System Architecture
 
@@ -136,7 +133,6 @@ Dataset usage should be documented according to the actual training pipeline:
 - **Object detection:** Annotated images used to train or evaluate the YOLO-based detector.
 - **Species classification:** Labelled fish images used to train or evaluate EfficientNet.
 
-Each dataset should be listed with its name, source, classes, and role in the project. A dataset should only be described as a training dataset if it was actually used to train the corresponding model.
 
 ## 8. Installation and Execution
 
