@@ -1,0 +1,869 @@
+{
+    "image": "goby and gold.png",
+    "generated": "2026-10-11T20:22:34",
+    "image_quality": {
+        "original": {
+            "brightness": 113.48,
+            "contrast": 20.67,
+            "sharpness": 142.36,
+            "color_cast": {
+                "blue": 127.09,
+                "green": 123.6,
+                "red": 88.43
+            }
+        },
+        "enhanced": {
+            "brightness": 100.56,
+            "contrast": 30.28,
+            "sharpness": 7.05,
+            "color_cast": {
+                "blue": 113.47,
+                "green": 103.81,
+                "red": 89.24
+            }
+        },
+        "enhancement_steps": [
+            "U-Net underwater enhancement applied",
+            "Detail recovery (unsharp mask): U-Net output lost more than 50% of the original sharpness"
+        ]
+    },
+    "detection_feedback_loop": [
+        {
+            "attempt": "analysis image, normal threshold",
+            "threshold": 40,
+            "found": 12
+        }
+    ],
+    "gemini_used": true,
+    "analysis_image": "original",
+    "gemini_school_summary": {
+        "total_fish_visible": 6,
+        "groups": [
+            {
+                "common_name": "Goldfish",
+                "matched_class": "Gold Fish",
+                "approx_count": 3,
+                "notes": "Bright orange goldfish swimming near the surface.",
+                "scientific_name": "Carassius auratus",
+                "species": "Gold Fish"
+            },
+            {
+                "common_name": "Goby",
+                "matched_class": "Goby",
+                "approx_count": 3,
+                "notes": "Small mottled gobies swimming in the water column.",
+                "scientific_name": "Gobiidae",
+                "species": "Goby"
+            }
+        ],
+        "overall_comment": "A composite photo showing two different species groups of freshwater fish."
+    },
+    "total_objects": 12,
+    "counts": {
+        "Gold Fish": 6,
+        "Goby": 5,
+        "Fish (too small)": 1
+    },
+    "automatic_feedback_loop": {
+        "fish_total": 12,
+        "reanalysed_automatically": 1,
+        "confidence_improved": 0,
+        "species_changed": 1,
+        "still_low_confidence": 2
+    },
+    "growth_tracking": {
+        "csv": "growth_history.csv",
+        "graph": "growth_graph.png",
+        "metric": "mean fish bounding-box area in pixels; apparent size only"
+    },
+    "detections": [
+        {
+            "id": 1,
+            "x1": 39,
+            "y1": 312,
+            "x2": 523,
+            "y2": 627,
+            "detector_class": "fishes",
+            "detector_confidence": 0.9528319835662842,
+            "is_fish": true,
+            "crop_box": [
+                1,
+                287,
+                561,
+                652
+            ],
+            "species": "Gold Fish",
+            "species_confidence": 0.99,
+            "label": "Gold Fish",
+            "confidence": 0.99,
+            "tier": "high",
+            "top3": [
+                {
+                    "species": "Gold Fish",
+                    "probability": 0.9998107552528381
+                },
+                {
+                    "species": "Tilapia",
+                    "probability": 6.102820407249965e-05
+                },
+                {
+                    "species": "Bangus",
+                    "probability": 2.0918452719342895e-05
+                }
+            ],
+            "feedback_loop": {
+                "triggered": false,
+                "stages": [
+                    {
+                        "stage": "initial prediction",
+                        "species": "Gold Fish",
+                        "confidence": 0.9998107552528381
+                    }
+                ]
+            },
+            "crop_note": "",
+            "local_species": "Gold Fish",
+            "local_confidence": 0.9998107552528381,
+            "gemini": {
+                "common_name": "Goldfish",
+                "scientific_name": "Carassius auratus",
+                "matched_class": "Gold Fish",
+                "species": "Gold Fish",
+                "confidence": 0.98,
+                "is_fish": true,
+                "key_features": "Bright orange body with long flowing fins and tall dorsal fin.",
+                "second_choice": "Carp"
+            },
+            "decision_source": "local model + Gemini agree",
+            "xai": {
+                "method": "Grad-CAM",
+                "focus_region": "centre",
+                "strong_activation_percent": 10.3,
+                "on_body_percent": 91,
+                "edge_percent": 9,
+                "compact": true
+            },
+            "justification": "The detector found an object of class 'fishes' with 95% confidence. The local species model's final choice is Gold Fish (100%), ahead of Tilapia (0%); margin 100 points. Grad-CAM shows the decision was driven mainly by the centre part of the fish (10% of the crop strongly activated, compact pattern). Attention stays on the fish body, not the background. Gemini vision check: Goldfish (Carassius auratus) at 98% confidence - evidence: Bright orange body with long flowing fins and tall dorsal fin. Final decision: Gold Fish (source: local model + Gemini agree). Grad-CAM above shows where the LOCAL model looked. Verdict: HIGH confidence - accepted automatically."
+        },
+        {
+            "id": 2,
+            "x1": 1116,
+            "y1": 459,
+            "x2": 1441,
+            "y2": 714,
+            "detector_class": "fishes",
+            "detector_confidence": 0.9494709372520447,
+            "is_fish": true,
+            "crop_box": [
+                1090,
+                439,
+                1467,
+                734
+            ],
+            "species": "Gold Fish",
+            "species_confidence": 0.99,
+            "label": "Gold Fish",
+            "confidence": 0.99,
+            "tier": "high",
+            "top3": [
+                {
+                    "species": "Gold Fish",
+                    "probability": 0.9999611377716064
+                },
+                {
+                    "species": "Pangasius",
+                    "probability": 1.100111967389239e-05
+                },
+                {
+                    "species": "Goby",
+                    "probability": 5.022539426136063e-06
+                }
+            ],
+            "feedback_loop": {
+                "triggered": false,
+                "stages": [
+                    {
+                        "stage": "initial prediction",
+                        "species": "Gold Fish",
+                        "confidence": 0.9999611377716064
+                    }
+                ]
+            },
+            "crop_note": "",
+            "local_species": "Gold Fish",
+            "local_confidence": 0.9999611377716064,
+            "gemini": {
+                "common_name": "Goldfish",
+                "scientific_name": "Carassius auratus",
+                "matched_class": "Gold Fish",
+                "species": "Gold Fish",
+                "confidence": 0.98,
+                "is_fish": true,
+                "key_features": "Orange and white body coloration with large fan-like tail fin.",
+                "second_choice": "Carp"
+            },
+            "decision_source": "local model + Gemini agree",
+            "xai": {
+                "method": "Grad-CAM",
+                "focus_region": "left",
+                "strong_activation_percent": 12.3,
+                "on_body_percent": 88,
+                "edge_percent": 12,
+                "compact": true
+            },
+            "justification": "The detector found an object of class 'fishes' with 95% confidence. The local species model's final choice is Gold Fish (100%), ahead of Pangasius (0%); margin 100 points. Grad-CAM shows the decision was driven mainly by the left part of the fish (12% of the crop strongly activated, compact pattern). Attention stays on the fish body, not the background. Gemini vision check: Goldfish (Carassius auratus) at 98% confidence - evidence: Orange and white body coloration with large fan-like tail fin. Final decision: Gold Fish (source: local model + Gemini agree). Grad-CAM above shows where the LOCAL model looked. Verdict: HIGH confidence - accepted automatically."
+        },
+        {
+            "id": 3,
+            "x1": 598,
+            "y1": 157,
+            "x2": 1026,
+            "y2": 460,
+            "detector_class": "fishes",
+            "detector_confidence": 0.944749653339386,
+            "is_fish": true,
+            "crop_box": [
+                564,
+                133,
+                1060,
+                484
+            ],
+            "species": "Gold Fish",
+            "species_confidence": 0.99,
+            "label": "Gold Fish",
+            "confidence": 0.99,
+            "tier": "high",
+            "top3": [
+                {
+                    "species": "Gold Fish",
+                    "probability": 0.9998400211334229
+                },
+                {
+                    "species": "Tilapia",
+                    "probability": 8.584785973653197e-05
+                },
+                {
+                    "species": "Bangus",
+                    "probability": 1.8991919205291197e-05
+                }
+            ],
+            "feedback_loop": {
+                "triggered": false,
+                "stages": [
+                    {
+                        "stage": "initial prediction",
+                        "species": "Gold Fish",
+                        "confidence": 0.9998400211334229
+                    }
+                ]
+            },
+            "crop_note": "",
+            "local_species": "Gold Fish",
+            "local_confidence": 0.9998400211334229,
+            "gemini": {
+                "common_name": "Goldfish",
+                "scientific_name": "Carassius auratus",
+                "matched_class": "Gold Fish",
+                "species": "Gold Fish",
+                "confidence": 0.98,
+                "is_fish": true,
+                "key_features": "Deep orange body with translucent white-edged flowing fins.",
+                "second_choice": "Carp"
+            },
+            "decision_source": "local model + Gemini agree",
+            "xai": {
+                "method": "Grad-CAM",
+                "focus_region": "centre",
+                "strong_activation_percent": 13.2,
+                "on_body_percent": 94,
+                "edge_percent": 6,
+                "compact": true
+            },
+            "justification": "The detector found an object of class 'fishes' with 94% confidence. The local species model's final choice is Gold Fish (100%), ahead of Tilapia (0%); margin 100 points. Grad-CAM shows the decision was driven mainly by the centre part of the fish (13% of the crop strongly activated, compact pattern). Attention stays on the fish body, not the background. Gemini vision check: Goldfish (Carassius auratus) at 98% confidence - evidence: Deep orange body with translucent white-edged flowing fins. Final decision: Gold Fish (source: local model + Gemini agree). Grad-CAM above shows where the LOCAL model looked. Verdict: HIGH confidence - accepted automatically."
+        },
+        {
+            "id": 4,
+            "x1": 1100,
+            "y1": 233,
+            "x2": 1430,
+            "y2": 355,
+            "detector_class": "fishes",
+            "detector_confidence": 0.9318486452102661,
+            "is_fish": true,
+            "crop_box": [
+                1074,
+                224,
+                1456,
+                364
+            ],
+            "species": "Goby",
+            "species_confidence": 0.99,
+            "label": "Goby",
+            "confidence": 0.99,
+            "tier": "high",
+            "top3": [
+                {
+                    "species": "Goby",
+                    "probability": 0.9986201524734497
+                },
+                {
+                    "species": "Snakehead",
+                    "probability": 0.0005478755920194089
+                },
+                {
+                    "species": "Mudfish",
+                    "probability": 0.00032190108322538435
+                }
+            ],
+            "feedback_loop": {
+                "triggered": false,
+                "stages": [
+                    {
+                        "stage": "initial prediction",
+                        "species": "Goby",
+                        "confidence": 0.9986201524734497
+                    }
+                ]
+            },
+            "crop_note": "",
+            "local_species": "Goby",
+            "local_confidence": 0.9986201524734497,
+            "gemini": {
+                "common_name": "Goby",
+                "scientific_name": "Gobiidae",
+                "matched_class": "Goby",
+                "species": "Goby",
+                "confidence": 0.95,
+                "is_fish": true,
+                "key_features": "Mottled brown body with spotted dorsal and tail fins and high eyes.",
+                "second_choice": "Mudfish"
+            },
+            "decision_source": "local model + Gemini agree",
+            "xai": {
+                "method": "Grad-CAM",
+                "focus_region": "centre",
+                "strong_activation_percent": 17.4,
+                "on_body_percent": 82,
+                "edge_percent": 18,
+                "compact": true
+            },
+            "justification": "The detector found an object of class 'fishes' with 93% confidence. The local species model's final choice is Goby (100%), ahead of Snakehead (0%); margin 100 points. Grad-CAM shows the decision was driven mainly by the centre part of the fish (17% of the crop strongly activated, compact pattern). Attention stays on the fish body, not the background. Gemini vision check: Goby (Gobiidae) at 95% confidence - evidence: Mottled brown body with spotted dorsal and tail fins and high eyes. Final decision: Goby (source: local model + Gemini agree). Grad-CAM above shows where the LOCAL model looked. Verdict: HIGH confidence - accepted automatically."
+        },
+        {
+            "id": 5,
+            "x1": 176,
+            "y1": 670,
+            "x2": 663,
+            "y2": 845,
+            "detector_class": "fishes",
+            "detector_confidence": 0.9127547740936279,
+            "is_fish": true,
+            "crop_box": [
+                138,
+                656,
+                701,
+                859
+            ],
+            "species": "Goby",
+            "species_confidence": 0.99,
+            "label": "Goby",
+            "confidence": 0.99,
+            "tier": "high",
+            "top3": [
+                {
+                    "species": "Goby",
+                    "probability": 0.9999953508377075
+                },
+                {
+                    "species": "Mudfish",
+                    "probability": 1.5402866893055034e-06
+                },
+                {
+                    "species": "Freshwater Eel",
+                    "probability": 1.4694591072839103e-06
+                }
+            ],
+            "feedback_loop": {
+                "triggered": false,
+                "stages": [
+                    {
+                        "stage": "initial prediction",
+                        "species": "Goby",
+                        "confidence": 0.9999953508377075
+                    }
+                ]
+            },
+            "crop_note": "",
+            "local_species": "Goby",
+            "local_confidence": 0.9999953508377075,
+            "gemini": {
+                "common_name": "Goby",
+                "scientific_name": "Gobiidae",
+                "matched_class": "Goby",
+                "species": "Goby",
+                "confidence": 0.95,
+                "is_fish": true,
+                "key_features": "Elongated body with dark blotches and heavily spotted fins.",
+                "second_choice": "Climbing Perch"
+            },
+            "decision_source": "local model + Gemini agree",
+            "xai": {
+                "method": "Grad-CAM",
+                "focus_region": "left",
+                "strong_activation_percent": 13.3,
+                "on_body_percent": 84,
+                "edge_percent": 16,
+                "compact": true
+            },
+            "justification": "The detector found an object of class 'fishes' with 91% confidence. The local species model's final choice is Goby (100%), ahead of Mudfish (0%); margin 100 points. Grad-CAM shows the decision was driven mainly by the left part of the fish (13% of the crop strongly activated, compact pattern). Attention stays on the fish body, not the background. Gemini vision check: Goby (Gobiidae) at 95% confidence - evidence: Elongated body with dark blotches and heavily spotted fins. Final decision: Goby (source: local model + Gemini agree). Grad-CAM above shows where the LOCAL model looked. Verdict: HIGH confidence - accepted automatically."
+        },
+        {
+            "id": 6,
+            "x1": 840,
+            "y1": 725,
+            "x2": 1190,
+            "y2": 857,
+            "detector_class": "fishes",
+            "detector_confidence": 0.9088367819786072,
+            "is_fish": true,
+            "crop_box": [
+                812,
+                715,
+                1218,
+                867
+            ],
+            "species": "Goby",
+            "species_confidence": 0.99,
+            "label": "Goby",
+            "confidence": 0.99,
+            "tier": "high",
+            "top3": [
+                {
+                    "species": "Goby",
+                    "probability": 0.9979523420333862
+                },
+                {
+                    "species": "Green Spotted Puffer",
+                    "probability": 0.0007229935727082193
+                },
+                {
+                    "species": "Snakehead",
+                    "probability": 0.0006125950603745878
+                }
+            ],
+            "feedback_loop": {
+                "triggered": false,
+                "stages": [
+                    {
+                        "stage": "initial prediction",
+                        "species": "Goby",
+                        "confidence": 0.9979523420333862
+                    }
+                ]
+            },
+            "crop_note": "",
+            "local_species": "Goby",
+            "local_confidence": 0.9979523420333862,
+            "gemini": {
+                "common_name": "Goby",
+                "scientific_name": "Gobiidae",
+                "matched_class": "Goby",
+                "species": "Goby",
+                "confidence": 0.95,
+                "is_fish": true,
+                "key_features": "Mottled brownish body with distinct black spots on clear fins.",
+                "second_choice": "Mudfish"
+            },
+            "decision_source": "local model + Gemini agree",
+            "xai": {
+                "method": "Grad-CAM",
+                "focus_region": "centre",
+                "strong_activation_percent": 8.5,
+                "on_body_percent": 92,
+                "edge_percent": 8,
+                "compact": true
+            },
+            "justification": "The detector found an object of class 'fishes' with 91% confidence. The local species model's final choice is Goby (100%), ahead of Green Spotted Puffer (0%); margin 100 points. Grad-CAM shows the decision was driven mainly by the centre part of the fish (8% of the crop strongly activated, compact pattern). Attention stays on the fish body, not the background. Gemini vision check: Goby (Gobiidae) at 95% confidence - evidence: Mottled brownish body with distinct black spots on clear fins. Final decision: Goby (source: local model + Gemini agree). Grad-CAM above shows where the LOCAL model looked. Verdict: HIGH confidence - accepted automatically."
+        },
+        {
+            "id": 7,
+            "x1": 751,
+            "y1": 54,
+            "x2": 920,
+            "y2": 102,
+            "detector_class": "fishes",
+            "detector_confidence": 0.8685079216957092,
+            "is_fish": true,
+            "crop_box": [
+                738,
+                51,
+                933,
+                105
+            ],
+            "species": "Gold Fish",
+            "species_confidence": 0.99,
+            "label": "Gold Fish",
+            "confidence": 0.99,
+            "tier": "high",
+            "top3": [
+                {
+                    "species": "Gold Fish",
+                    "probability": 0.998898983001709
+                },
+                {
+                    "species": "Goby",
+                    "probability": 0.000736930116545409
+                },
+                {
+                    "species": "Perch",
+                    "probability": 0.00012719653022941202
+                }
+            ],
+            "feedback_loop": {
+                "triggered": false,
+                "stages": [
+                    {
+                        "stage": "initial prediction",
+                        "species": "Gold Fish",
+                        "confidence": 0.998898983001709
+                    }
+                ]
+            },
+            "crop_note": "",
+            "local_species": "Gold Fish",
+            "local_confidence": 0.998898983001709,
+            "gemini": {
+                "common_name": "Goldfish",
+                "scientific_name": "Carassius auratus",
+                "matched_class": "Gold Fish",
+                "species": "Gold Fish",
+                "confidence": 0.5,
+                "is_fish": true,
+                "key_features": "Distorted bright orange body and broad tail fin visible through surface ripples.",
+                "second_choice": "none"
+            },
+            "decision_source": "local model + Gemini agree",
+            "xai": {
+                "method": "Grad-CAM",
+                "focus_region": "centre",
+                "strong_activation_percent": 7.5,
+                "on_body_percent": 92,
+                "edge_percent": 8,
+                "compact": true
+            },
+            "justification": "The detector found an object of class 'fishes' with 87% confidence. The local species model's final choice is Gold Fish (100%), ahead of Goby (0%); margin 100 points. Grad-CAM shows the decision was driven mainly by the centre part of the fish (8% of the crop strongly activated, compact pattern). Attention stays on the fish body, not the background. Gemini vision check: Goldfish (Carassius auratus) at 50% confidence - evidence: Distorted bright orange body and broad tail fin visible through surface ripples. Final decision: Gold Fish (source: local model + Gemini agree). Grad-CAM above shows where the LOCAL model looked. Verdict: HIGH confidence - accepted automatically."
+        },
+        {
+            "id": 8,
+            "x1": 203,
+            "y1": 158,
+            "x2": 357,
+            "y2": 187,
+            "detector_class": "fishes",
+            "detector_confidence": 0.7703682780265808,
+            "is_fish": true,
+            "crop_box": [
+                191,
+                156,
+                369,
+                189
+            ],
+            "species": "Goby",
+            "species_confidence": 0.4102053835988045,
+            "label": "Goby",
+            "confidence": 0.4102053835988045,
+            "tier": "low",
+            "top3": [
+                {
+                    "species": "Goby",
+                    "probability": 0.4102053835988045
+                },
+                {
+                    "species": "Gold Fish",
+                    "probability": 0.26952835721895096
+                },
+                {
+                    "species": "Mosquito Fish",
+                    "probability": 0.17033708499511704
+                }
+            ],
+            "feedback_loop": {
+                "triggered": true,
+                "stages": [
+                    {
+                        "stage": "initial prediction",
+                        "species": "Mosquito Fish",
+                        "confidence": 0.45977482199668884
+                    },
+                    {
+                        "stage": "multi-view re-analysis (10 views)",
+                        "species": "Goby",
+                        "confidence": 0.4490299761295319
+                    },
+                    {
+                        "stage": "Grad-CAM focus re-crop",
+                        "species": "Goby",
+                        "confidence": 0.4102053835988045
+                    }
+                ],
+                "views": 10,
+                "views_agreeing": "4/10",
+                "improved": false,
+                "changed_prediction": true
+            },
+            "crop_note": "Note: the fish is small in the frame, so fine texture is limited.",
+            "local_species": "Goby",
+            "local_confidence": 0.4102053835988045,
+            "gemini": {
+                "common_name": "Goldfish",
+                "scientific_name": "Carassius auratus",
+                "matched_class": "Gold Fish",
+                "species": "Gold Fish",
+                "confidence": 0.4,
+                "is_fish": true,
+                "key_features": "Elongated body with orange, white, and dark calico markings seen through water ripples.",
+                "second_choice": "none"
+            },
+            "decision_source": "local model (Gemini unsure)",
+            "xai": {
+                "method": "Grad-CAM",
+                "focus_region": "right",
+                "strong_activation_percent": 7.5,
+                "on_body_percent": 79,
+                "edge_percent": 21,
+                "compact": true
+            },
+            "justification": "The detector found an object of class 'fishes' with 77% confidence. The local species model's final choice is Goby (41%), ahead of Gold Fish (27%); margin 14 points. Grad-CAM shows the decision was driven mainly by the right part of the fish (8% of the crop strongly activated, compact pattern). Attention stays on the fish body, not the background. Automatic feedback loop (first confidence was below 75%): initial prediction: Mosquito Fish 46%; multi-view re-analysis (10 views): Goby 45%; Grad-CAM focus re-crop: Goby 41%. 4/10 views agreed with the final species. The loop changed the initial prediction. Gemini vision check: Goldfish (Carassius auratus) at 40% confidence - evidence: Elongated body with orange, white, and dark calico markings seen through water ripples. Final decision: Goby (source: local model (Gemini unsure)). Grad-CAM above shows where the LOCAL model looked. Note: the fish is small in the frame, so fine texture is limited. Verdict: LOW confidence - best guess shown with '?'. After automatic re-analysis the evidence is still weak, so this fish may belong to a species outside the model's training classes."
+        },
+        {
+            "id": 9,
+            "x1": 381,
+            "y1": 22,
+            "x2": 475,
+            "y2": 40,
+            "detector_class": "fishes",
+            "detector_confidence": 0.7673215866088867,
+            "is_fish": true,
+            "crop_box": [
+                374,
+                21,
+                482,
+                41
+            ],
+            "species": "Gold Fish",
+            "species_confidence": 0.946456229686737,
+            "label": "Gold Fish",
+            "confidence": 0.946456229686737,
+            "tier": "high",
+            "top3": [
+                {
+                    "species": "Gold Fish",
+                    "probability": 0.8464562296867371
+                },
+                {
+                    "species": "Long-Snouted Pipefish",
+                    "probability": 0.0762936994433403
+                },
+                {
+                    "species": "Goby",
+                    "probability": 0.04762372002005577
+                }
+            ],
+            "feedback_loop": {
+                "triggered": false,
+                "stages": [
+                    {
+                        "stage": "initial prediction",
+                        "species": "Gold Fish",
+                        "confidence": 0.8464562296867371
+                    }
+                ]
+            },
+            "crop_note": "Note: the fish is small in the frame, so fine texture is limited.",
+            "local_species": "Gold Fish",
+            "local_confidence": 0.8464562296867371,
+            "gemini": {
+                "common_name": "Goldfish",
+                "scientific_name": "Carassius auratus",
+                "matched_class": "Gold Fish",
+                "species": "Gold Fish",
+                "confidence": 0.4,
+                "is_fish": true,
+                "key_features": "Blurred orange fish body with elongated shape under water surface.",
+                "second_choice": "none"
+            },
+            "decision_source": "local model + Gemini agree",
+            "xai": {
+                "method": "Grad-CAM",
+                "focus_region": "upper",
+                "strong_activation_percent": 8.6,
+                "on_body_percent": 86,
+                "edge_percent": 14,
+                "compact": true
+            },
+            "justification": "The detector found an object of class 'fishes' with 77% confidence. The local species model's final choice is Gold Fish (85%), ahead of Long-Snouted Pipefish (8%); margin 77 points. Grad-CAM shows the decision was driven mainly by the upper part of the fish (9% of the crop strongly activated, compact pattern). Attention stays on the fish body, not the background. Gemini vision check: Goldfish (Carassius auratus) at 40% confidence - evidence: Blurred orange fish body with elongated shape under water surface. Final decision: Gold Fish (source: local model + Gemini agree). Grad-CAM above shows where the LOCAL model looked. Note: the fish is small in the frame, so fine texture is limited. Verdict: HIGH confidence - accepted automatically."
+        },
+        {
+            "id": 10,
+            "x1": 779,
+            "y1": 0,
+            "x2": 889,
+            "y2": 21,
+            "detector_class": "fishes",
+            "detector_confidence": 0.7504884600639343,
+            "is_fish": true,
+            "crop_box": [
+                771,
+                0,
+                897,
+                22
+            ],
+            "species": "Gold Fish",
+            "species_confidence": 0.99,
+            "label": "Gold Fish",
+            "confidence": 0.99,
+            "tier": "high",
+            "top3": [
+                {
+                    "species": "Gold Fish",
+                    "probability": 0.9179075360298157
+                },
+                {
+                    "species": "Goby",
+                    "probability": 0.03577557951211929
+                },
+                {
+                    "species": "Glass Perchlet",
+                    "probability": 0.01520258467644453
+                }
+            ],
+            "feedback_loop": {
+                "triggered": false,
+                "stages": [
+                    {
+                        "stage": "initial prediction",
+                        "species": "Gold Fish",
+                        "confidence": 0.9179075360298157
+                    }
+                ]
+            },
+            "crop_note": "Note: the fish is small in the frame, so fine texture is limited.",
+            "local_species": "Gold Fish",
+            "local_confidence": 0.9179075360298157,
+            "gemini": {
+                "common_name": "Goldfish",
+                "scientific_name": "Carassius auratus",
+                "matched_class": "Gold Fish",
+                "species": "Gold Fish",
+                "confidence": 0.4,
+                "is_fish": true,
+                "key_features": "Blurry orange body with lighter ventral coloration seen through water refraction.",
+                "second_choice": "none"
+            },
+            "decision_source": "local model + Gemini agree",
+            "xai": {
+                "method": "Grad-CAM",
+                "focus_region": "centre",
+                "strong_activation_percent": 14.1,
+                "on_body_percent": 91,
+                "edge_percent": 9,
+                "compact": true
+            },
+            "justification": "The detector found an object of class 'fishes' with 75% confidence. The local species model's final choice is Gold Fish (92%), ahead of Goby (4%); margin 88 points. Grad-CAM shows the decision was driven mainly by the centre part of the fish (14% of the crop strongly activated, compact pattern). Attention stays on the fish body, not the background. Gemini vision check: Goldfish (Carassius auratus) at 40% confidence - evidence: Blurry orange body with lighter ventral coloration seen through water refraction. Final decision: Gold Fish (source: local model + Gemini agree). Grad-CAM above shows where the LOCAL model looked. Note: the fish is small in the frame, so fine texture is limited. Verdict: HIGH confidence - accepted automatically."
+        },
+        {
+            "id": 11,
+            "x1": 1158,
+            "y1": 206,
+            "x2": 1244,
+            "y2": 270,
+            "detector_class": "fishes",
+            "detector_confidence": 0.7139604687690735,
+            "is_fish": true,
+            "crop_box": [
+                1152,
+                201,
+                1250,
+                275
+            ],
+            "species": "Goby",
+            "species_confidence": 0.85,
+            "label": "Goby",
+            "confidence": 0.85,
+            "tier": "high",
+            "top3": [
+                {
+                    "species": "Scat Fish",
+                    "probability": 0.9820922613143921
+                },
+                {
+                    "species": "Snakehead",
+                    "probability": 0.011173701845109463
+                },
+                {
+                    "species": "Janitor Fish",
+                    "probability": 0.004081396851688623
+                }
+            ],
+            "feedback_loop": {
+                "triggered": false,
+                "stages": [
+                    {
+                        "stage": "initial prediction",
+                        "species": "Scat Fish",
+                        "confidence": 0.9820922613143921
+                    }
+                ]
+            },
+            "crop_note": "",
+            "local_species": "Scat Fish",
+            "local_confidence": 0.9820922613143921,
+            "gemini": {
+                "common_name": "Goby",
+                "scientific_name": "Gobiidae",
+                "matched_class": "Goby",
+                "species": "Goby",
+                "confidence": 0.85,
+                "is_fish": true,
+                "key_features": "Translucent dorsal fin covered in regular rows of dark spots on fin rays.",
+                "second_choice": "Janitor Fish"
+            },
+            "decision_source": "Gemini (overrode local model)",
+            "xai": {
+                "method": "Grad-CAM",
+                "focus_region": "upper",
+                "strong_activation_percent": 11.4,
+                "on_body_percent": 84,
+                "edge_percent": 16,
+                "compact": true
+            },
+            "justification": "The detector found an object of class 'fishes' with 71% confidence. The local species model's final choice is Scat Fish (98%), ahead of Snakehead (1%); margin 97 points. Grad-CAM shows the decision was driven mainly by the upper part of the fish (11% of the crop strongly activated, compact pattern). Attention stays on the fish body, not the background. Gemini vision check: Goby (Gobiidae) at 85% confidence - evidence: Translucent dorsal fin covered in regular rows of dark spots on fin rays. Final decision: Goby (source: Gemini (overrode local model)). Grad-CAM above shows where the LOCAL model looked. Verdict: HIGH confidence - accepted automatically."
+        },
+        {
+            "id": 12,
+            "x1": 403,
+            "y1": 0,
+            "x2": 478,
+            "y2": 11,
+            "detector_class": "fishes",
+            "detector_confidence": 0.5175938606262207,
+            "is_fish": true,
+            "crop_box": [
+                397,
+                0,
+                484,
+                11
+            ],
+            "label": "Fish (too small)",
+            "confidence": 0.0,
+            "tier": "low",
+            "species": null,
+            "species_confidence": 0.0,
+            "top3": [],
+            "feedback_loop": {
+                "triggered": false
+            },
+            "justification": "The fish region is too small to classify reliably."
+        }
+    ]
+}
